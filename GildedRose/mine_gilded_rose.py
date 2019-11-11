@@ -9,6 +9,8 @@ class GildedRose(object):
     def changeQuality_AgedBrie(self, item):
         if item.quality < 50:
             item.quality += 1
+            if item.sell_in < 0:
+              item.quality += 1
 
     def changeQuality_BackstageTickets(self, item):
         if item.quality < 50:
@@ -60,7 +62,7 @@ class GildedRose(object):
                 normalItem = False
                 self.changeQuality_BackstageTickets(item)
 
-            if item.name == "Conjured Mana Cake":
+            if "Conjured" in item.name:
                 normalItem = False
                 self.changeQuality_Conjured(item)
             

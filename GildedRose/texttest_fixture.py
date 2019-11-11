@@ -1,18 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
-#from gilded_rose import *
-from mine_gilded_rose import *
-
-
-def NormalItem_test():
-    item = [Item(name="+5 Dexterity Vest", sell_in=6, quality=30)]
-
-    #GildedRose(item).another_update_quality()
-    
-    print(item[0].quality == 29)
-
-
+from gilded_rose import *
+#from mine_gilded_rose import *
 
 if __name__ == "__main__":
     print ("OMGHAI!")
@@ -28,8 +18,6 @@ if __name__ == "__main__":
              Item(name="Conjured Mana Cake", sell_in=3, quality=20),  # <-- :O
             ]
 
-    #NormalItem_test()
-
     days = 10
     import sys
     if len(sys.argv) > 1:
@@ -40,5 +28,5 @@ if __name__ == "__main__":
         for item in items:
             print(item)
         print("")
-        GildedRose(items).another_update_quality()
-        #GildedRose(items).update_quality()
+        #GildedRose(items).another_update_quality()
+        GildedRose(items).update_quality()
