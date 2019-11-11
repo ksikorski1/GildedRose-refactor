@@ -7,6 +7,7 @@ items = [
         Item(name="+5 Dexterity Vest", sell_in=-1, quality=20),
         Item(name="Aged Brie", sell_in=5, quality=10),
         Item(name="Aged Brie", sell_in=-1, quality=10),
+        Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=13, quality=50),
         Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=13, quality=20),
         Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=9, quality=20),
         Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=3, quality=20),
@@ -31,14 +32,15 @@ def AgedBrieTest():
   assert items[5].quality == 12, ("Blad dla:", items[5])
 
 def BackstageTicketsTest():
-  assert items[6].quality == 21, ("Blad dla:", items[6])
-  assert items[7].quality == 22, ("Blad dla:", items[7])
-  assert items[8].quality == 23, ("Blad dla:", items[8])  
-  assert items[9].quality == 0, ("Blad dla:", items[9])
+  assert items[6].quality == 50, ("Blad dla:", items[6])
+  assert items[7].quality == 21, ("Blad dla:", items[7])
+  assert items[8].quality == 22, ("Blad dla:", items[8])
+  assert items[9].quality == 23, ("Blad dla:", items[9])  
+  assert items[10].quality == 0, ("Blad dla:", items[10])
 
 def ConjuredTest():
-  assert items[10].quality == 18, ("Blad dla:", items[10])
-  assert items[11].quality == 16, ("Blad dla:", items[11])
+  assert items[11].quality == 18, ("Blad dla:", items[11])
+  assert items[12].quality == 16, ("Blad dla:", items[12])
   
 
 SulfurasTest()
