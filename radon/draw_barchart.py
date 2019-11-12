@@ -19,5 +19,5 @@ plt.title('Scores by group and gender')
 
 plt.xticks(ind + width / 2, ('complexity', 'LOC'))
 plt.legend(loc='best')
-plt.savefig('complexity.png')
+plt.savefig('./complexity.png')
 plt.show()

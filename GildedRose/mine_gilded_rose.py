@@ -47,8 +47,6 @@ class GildedRose(object):
         for item in self.items:
             normalItem = True
             
-            self.change_day(item)
-            
             if "Sulfuras" in item.name:
                 self.Sulfuras_Quality(item)
                 continue
@@ -67,6 +65,8 @@ class GildedRose(object):
             
             if normalItem:
                 self.changeQuality_normalItem(item)
+
+            self.change_day(item)
 
             self.QualityCheck(item)
 
