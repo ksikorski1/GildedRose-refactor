@@ -3,7 +3,7 @@ class GildedRose(object):
     def __init__(self, items):
         self.items = items
 
-    def change_day(self, item):
+    def ChangeDay(self, item):
         item.sell_in -= 1
     
     def changeQuality_AgedBrie(self, item):
@@ -48,7 +48,7 @@ class GildedRose(object):
             normalItem = True
             
             if "Sulfuras" in item.name:
-                self.Sulfuras_Quality(item)
+                self.Sulfuras_QualityCheck(item)
                 continue
 
             if item.name == "Aged Brie":
@@ -66,7 +66,7 @@ class GildedRose(object):
             if normalItem:
                 self.changeQuality_normalItem(item)
 
-            self.change_day(item)
+            self.ChangeDay(item)
 
             self.QualityCheck(item)
 
