@@ -6,12 +6,8 @@ import numpy as np
 #i analogicznie
 #python -m radon cc -a radon_bez-refaktoryzacji.py
 
-original = [12.3, 38]
-refactored = [3.3, 71]
-
-N = 5
-men_means = (20, 35, 30, 35, 27)
-women_means = (25, 32, 34, 20, 25)
+original = [12.3, 36]
+refactored = [3.3, 54]
 
 ind = np.arange(2) 
 width = 0.35       
