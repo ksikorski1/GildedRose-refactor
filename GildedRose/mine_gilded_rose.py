@@ -32,7 +32,7 @@ class GildedRose(object):
         if item.sell_in < 0:
             item.quality -= 1
 
-    def Sulfuras_Quality(self, item):
+    def Sulfuras_QualityCheck(self, item):
         if item.quality != 80:
             item.quality = 80
 
