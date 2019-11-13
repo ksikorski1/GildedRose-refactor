@@ -1,12 +1,19 @@
-= Gilded Rose - Jakub Sikorski
+= Refaktoryzacje
 :awestruct-layout: base
 :showtitle:
 :author: Jakub Sikorski
 
+Jakub Sikorski
+
+https://github.com/ksikorski1/GildedRose-refactor[Github]
+
 == Wstęp
 
-Przedstawię jak krok po kroku refaktoryzowałem kod i jak dodałem nowy typ przedmiotów - Conjured. 
-Na koniec porównam złożoność wersji oryginalnej Gilded Rose i mojej "poprawionej" wersji, używając dwóch metryk: 
+Kod "oryginalny" (startowy) Gilded Rose pobrałem z Githuba
+Emily Bache (https://github.com/emilybache/GildedRose-Refactoring-Kata[link])
+
+Przedstawię jak krok po kroku refaktoryzowałem Gilded Rose i jak dodałem nowy typ przedmiotów - Conjured. 
+Na koniec porównam złożoność wersji oryginalnej i mojej "poprawionej" wersji, używając dwóch metryk: 
 złożoności cyklomatycznej i SLOC (source lines of code). Kod jest napisany w Pythonie, a do obliczenia metryk posłużyło
 mi narzędzie radon.
 
@@ -17,7 +24,8 @@ Dokument został napisany przy użyciu AsciiDoctor, Eclipse IDE i dostępnego do
 === Krok 0
 
 Wersja napisana przez Leeroya posiada wiele zagnieżdzonych instrukcji warunkowych.
-To co chcę uzyskać to "rozbicie" ich na mniejsze komponenty, tak aby każdy typ przedmiotu był reprezentowany osobno,
+To co chcę uzyskać to "rozbicie" ich na mniejsze komponenty (decompose conditional),
+tak aby każdy typ przedmiotu był reprezentowany osobno,
 a logika stojąca za zmianami quality każdego z przedmiotów znalazła się w odpowiednich metodach. Podczas pisania metod
 były one od razu testowane (plik testy.py w repozytorium), samych testów jednak w tekście nie pokazuję.
 Tak wygląda kod wyjściowy, z którego startowałem:
@@ -34,7 +42,8 @@ class GildedRose(object):
 
 ----
 
-Klasa Item pozostała taka sama, więc jej nie pokazuje.
+Klasa Item pozostała taka sama jak w oryginalnej wersji, czyli każdy Item posiada name
+(nazwę), quality (wartość) oraz sell_in (czyli kiedy powinniśmy sprzedać przedmiot).
 
 === Krok 1
 
@@ -327,7 +336,7 @@ def update_quality(self):
 
 == Złożoność
 
-Mając już gotowy kod nadeszłą pora porównać ze sobą w jakiś sposób to, co ja napisałęm, z oryginalnym kodem Leeroya.
+Mając już gotowy kod nadeszłą pora porównać ze sobą w jakiś sposób to, co ja napisałem, z oryginalnym kodem Leeroya.
 W tym celu użyłem narzędzia Radon (https://radon.readthedocs.io/en/latest/[link do dokumentacji]) i skorzystałem z dwóch
 metryk, które można obliczyć używając go.
 
