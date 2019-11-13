@@ -1,2 +1,2 @@
 # GildedRose refactor
-#Jakub Sikorski
+Jakub Sikorski
